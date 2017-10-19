@@ -1,22 +1,19 @@
 let inquirer = require("inquirer");
-let initial_entry_controller = require("../Controllers/initial_entry.js");
-
+// let user_controller = require("../Controllers/user_controller.js");
 module.exports = {
-	deck_array: [],
-
-	start_view: function() { 
+	start_view: function(deck_array , db_connection , deck_name_id_array) { 
 
 		inquirer.prompt([
 		    {
 		      type: "list",
 		      message: "Choose a deck: ",
-		      choices: this.deck_array,
+		      choices: deck_array,
 		      name: "user_choice"
 		    }	
 		])
 		.then(function(response){
-			
-
+			let choice_index_id = deck_name_id_array[deck_array.indexOf(response.user_choice)];
+			return choice_index_id;
 		});
 	}
 
