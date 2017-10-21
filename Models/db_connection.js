@@ -1,6 +1,6 @@
 let mysql = require("mysql");
 
-let connection = mysql.createConnection({
+module.exports = mysql.createConnection({
   host: "localhost",
   port: 3306,
 
@@ -12,5 +12,5 @@ let connection = mysql.createConnection({
   database: "flashcard_decks"
 });
 
-module.exports = {connection: connection};
+
 
