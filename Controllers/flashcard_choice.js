@@ -55,8 +55,14 @@ module.exports = {
 		let scope = this;
 		deck_names.get_deck_names(connection)
 			.then(function(res){
-				scope.decks_name_array_of_objects = res;
-				scope.choose_deck_view(res);
+				if (res.length > 0){
+					scope.decks_name_array_of_objects = res;
+					scope.choose_deck_view(res);
+				}
+				else{
+					console.log("There are no decks! Make one ->");
+					scope.start_new_deck();
+				}
 			})
 			.catch(function(err){
 				console.log(err);
