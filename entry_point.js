@@ -1,9 +1,6 @@
 let inquirer = require("inquirer");
 let flashcard_choice = require("./Controllers/flashcard_choice.js");
 
-
-
-
 let initial_prompt = function () {
 	return inquirer.prompt([
 	    {

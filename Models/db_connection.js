@@ -8,7 +8,7 @@ module.exports = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
+  password: "UCSD0724",
   database: "flashcard_decks"
 });
 
